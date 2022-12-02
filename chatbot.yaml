@@ -1,0 +1,32 @@
+name: zb-cailapub
+
+entryPoint: main.sc
+
+botEngine: v2
+language: ru
+
+tests:
+  include:
+    - tour.xml
+    - main.xml
+    - total.xml
+
+sts:
+    noMatchThreshold: 0.2
+
+caila:
+    noMatchThreshold: 0.2
+    
+injector:
+    botName: "Just Tour"
+    api_key: 'fc6b5b714c33d38ce0ae9bbf3d2432e3'
+    slotfilling:
+        maxSlotRetries: 2
+        stopOnAnyIntent: false
+        stopOnAnyIntentThreshold: 0.2
+    smtp:
+        host: smtp.mail.ru
+        port: 465
+        from: alex281172@mail.ru
+        user: alex281172@mail.ru 
+        password: 7dZCCD8Nimx7aVX7qn0k

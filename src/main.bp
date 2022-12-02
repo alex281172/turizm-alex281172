@@ -1,0 +1,43 @@
+{
+  "positions" : [ {
+    "id" : "/Welcome",
+    "x" : 0,
+    "y" : 0
+  }, {
+    "id" : "/Service/SuggestHelp",
+    "x" : 0,
+    "y" : 1021
+  }, {
+    "id" : "/Service/CatchAll",
+    "x" : 0,
+    "y" : 1313
+  }, {
+    "id" : "/ConfirmData/Confirm",
+    "x" : 0,
+    "y" : 1783
+  }, {
+    "id" : "/ConfirmData/Accepted",
+    "x" : 0,
+    "y" : 2330
+  }, {
+    "id" : "/ConfirmData/Rejected",
+    "x" : 0,
+    "y" : 2818
+  }, {
+    "id" : "/Anketing/MyNameAsk",
+    "x" : 0,
+    "y" : 3309
+  }, {
+    "id" : "/Anketing/MyWrong",
+    "x" : 0,
+    "y" : 3549
+  }, {
+    "id" : "/Phone/Ask",
+    "x" : 0,
+    "y" : 4128
+  }, {
+    "id" : "/Phone/Confirm",
+    "x" : 0,
+    "y" : 4368
+  } ]
+}

@@ -1,0 +1,183 @@
+<test>
+    <test-case id="проверка tour 1">
+        <state>Tour/AskQuantity/Get</state>
+        <q>1</q>
+        <a>отлично</a>
+        <a>Вы указали: взрослых 1 чел.</a>
+        <a>Укажите количество детей (до 16лет) в поездке ->:</a>
+    </test-case>
+    
+    <test-case id="проверка tour не знаю">
+        <state>Tour/AskQuantity/Get</state>
+        <q>не знаю</q>
+        <a>отлично</a>
+        <a>Вы сказали "не знаю". Уточнить количество можно позже</a>
+        <a>Укажите количество детей (до 16лет) в поездке ->:</a>
+    </test-case>
+
+    <test-case id="проверка tour 100">
+        <state>Tour/AskQuantity/Get</state>
+        <q>100</q>
+        <a>какая-то ошибка</a>
+        <a>Укажите количество взрослых в поездке ->:</a>
+    </test-case>
+
+    <test-case id="проверка tour отмена">
+        <state>Tour/AskQuantity/Get</state>
+        <q>отмена</q>
+        <a>отлично</a>
+        <a>Вы сказали "отмена"</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>
+
+    <test-case id="проверка tour дети 100">
+        <state>Tour/AskQuantityChildren</state>
+        <q>100</q>
+        <a>какая-то ошибка</a>
+        <a>Укажите количество детей (до 16лет) в поездке ->:</a>
+    </test-case>
+
+    <test-case id="проверка tour дети 1">
+        <state>Tour/AskQuantityChildren</state>
+        <dateTime> 2022-11-19 00:00:00 </dateTime>
+        <q>1</q>
+        <a>отлично</a>
+        <a>Вы указали: детей 1.</a>
+        <a>Сегодня 19/11/2022. Укажите дату начала поездки в формате DD/MM/YYYY >:</a>
+    </test-case>
+    
+    <test-case id="проверка tour дети не знаю">
+        <state>Tour/AskQuantityChildren</state>
+        <dateTime> 2022-11-19 00:00:00 </dateTime>
+        <q>не знаю</q>
+        <a>отлично</a>
+        <a>Вы сказали "не знаю". Уточнить количество детей можно позже</a>
+        <a>Сегодня 19/11/2022. Укажите дату начала поездки в формате DD/MM/YYYY >:</a>
+    </test-case>
+    
+    <test-case id="проверка tour дети отмена">
+        <state>Tour/AskQuantityChildren</state>
+        <q>отмена</q>
+        <a>отлично</a>
+        <a>Вы сказали "отмена"</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>
+
+    <test-case id="проверка tour дата">
+        <state>Tour/AskTourDate</state>
+        <dateTime> 2022-11-19 00:00:00 </dateTime>
+        <q>19/11/2022</q>
+        <a>Укажите продолжительность поездки в днях>:</a>
+    </test-case>
+
+    <test-case id="проверка tour дата *">
+        <state>Tour/AskTourDate</state>
+        <dateTime> 2022-11-19 00:00:00 </dateTime>
+        <q>*</q>
+        <a>укажите правильную дату</a>
+        <a>Сегодня 19/11/2022. Укажите дату начала поездки в формате DD/MM/YYYY >:</a>
+    </test-case>
+
+    <test-case id="проверка tour дата не знаю">
+        <state>Tour/AskTourDate</state>
+        <dateTime> 2022-11-19 00:00:00 </dateTime>
+        <q>не знаю</q>
+        <a>Вы сказали "не знаю". Начало поздки можно уточнить позже</a>
+        <a>Укажите продолжительность поездки в днях>:</a>
+    </test-case>
+
+    <test-case id="проверка tour дата отмена">
+        <state>Tour/AskTourDate</state>
+        <dateTime> 2022-11-19 00:00:00 </dateTime>
+        <q>отмена</q>
+        <a>Вы сказали "отмена"</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>
+    
+    <test-case id="проверка tour продолжительность 1">
+        <state>Tour/AskTourDuration</state>
+        <q>1</q>
+        <a>Продолжительность поездки 1 дн.</a>
+        <a>Укажите звездность отеля ->:</a>
+    </test-case>    
+    
+    <test-case id="проверка tour продолжительность 100">
+        <state>Tour/AskTourDuration</state>
+        <q>100</q>
+        <a>Укажите продолжительность поездки в днях>:</a>
+    </test-case>        
+
+    <test-case id="проверка tour продолжительность отмена">
+        <state>Tour/AskTourDuration</state>
+        <q>отмена</q>
+        <a>Вы сказали "отмена"</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>   
+    
+    <test-case id="проверка tour продолжительность не знаю">
+        <state>Tour/AskTourDuration</state>
+        <q>не знаю</q>
+        <a>Вы сказали "не знаю". Продолжительнсть поздки можно уточнить позже</a>
+        <a>Укажите звездность отеля ->:</a>
+    </test-case>       
+    
+
+
+
+    
+    <test-case id="проверка tour звезды 1">
+        <state>Tour/AskHotelStars</state>
+        <q>2</q>
+        <a>Вы выбрали 2* отель</a>
+        <a>Вы можете оставить комментарий для менеджера и уточнить желаемый бюджет тура</a>
+    </test-case>    
+    
+    <test-case id="проверка tour звезды 100">
+        <state>Tour/AskHotelStars</state>
+        <q>100</q>
+        <a>Укажите звездность отеля ->:</a>
+    </test-case>        
+
+    <test-case id="проверка tour звезды отмена">
+        <state>Tour/AskHotelStars</state>
+        <q>отмена</q>
+        <a>Вы сказали "отмена"</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>   
+    
+    <test-case id="проверка tour звезды не знаю">
+        <state>Tour/AskHotelStars</state>
+        <q>не знаю</q>
+        <a>Вы сказали "не знаю". Отель можно уточнить позже</a>
+        <a>Вы можете оставить комментарий для менеджера и уточнить желаемый бюджет тура</a>
+    </test-case>
+    
+    
+    <test-case id="проверка путей ">
+        <state>Tour/AskHotelStars</state>
+        <q>не знаю</q>
+        <a>Вы сказали "не знаю". Отель можно уточнить позже</a>
+        <a>Вы можете оставить комментарий для менеджера и уточнить желаемый бюджет тура</a>
+        <q>куку</q>
+        <a state = "/Tour/ConfirmNote"/>
+        <q>Да</q>
+        <a state = "/Tour/ConfirmNote/AcceptedNote"/>
+        <a>ЗАЯВКА на подбор тура: 
+        Имя туриста undefined; 
+        контактный телефон: undefined; 
+        Город/Страна: undefined; 
+        взрослых: undefined; 
+        детей: undefined; 
+        дата начала поездки: undefined; 
+        продолжительность: undefined; 
+        класс отеля: не знаю; 
+        заметка для менеджера: куку
+        </a>
+        <a>Ваша Заявка отправлена на почту. Вам перезвонит наш менеджер</a>
+        <a>Если у Вас остались вопросы, то вы можете перезвонить по 8(812)000-00-00</a>
+
+    </test-case>
+    
+
+    
+</test>    

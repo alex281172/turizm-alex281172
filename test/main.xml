@@ -1,0 +1,153 @@
+<test>
+    <test-case id="тест приветствия">
+        <q>/start</q>
+        <a>Привет, привет!</a>
+        <a>Я бот туристической компании "Just Tour"</a>
+        <a>Давайте я помогу Вам подобрать тур?</a>
+    </test-case>
+
+
+    <test-case id="тест картинки и приветствия">
+        <q>/start</q>
+        <responseData field="replies[0]">
+            {"type":"image","imageUrl":"https://fs.tonkosti.ru/95/7b/957bcf478b48kcggkoogg44g0.jpg",
+            "text":"Давай закажем погоду!"}
+        </responseData>
+        <a>Привет, привет!</a>
+        <a>Я бот туристической компании "Just Tour"</a>
+        <a>Давайте я помогу Вам подобрать тур?</a>
+
+    </test-case>
+    
+    <test-case id="проверка первого ответа">
+        <state>Service/SuggestHelp</state>
+        <q>Да</q>
+        <a>Отлично!</a>
+        <a state = "/Service/SuggestHelp/Accepted"/>
+    </test-case>
+    
+    <test-case id="проверка второго ответа">
+        <state>Service/SuggestHelp</state>
+        <q>нет</q>
+        <a>Давайте помогу найти для вас хорошую погоду?</a>
+    </test-case>
+    
+    <test-case id="проверка третьего ответа">
+        <state>Service/SuggestHelp</state>
+        <q>Регистрация</q>
+        <a>Давайте познакомиcя. Как вас зовут?</a>
+    </test-case>    
+    
+    <test-case id="проверка четвертого ответа">
+        <state>Service/SuggestHelp</state>
+        <q>Погода</q>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>
+    <test-case id="проверка ответов ConfirmData">
+        <state>ConfirmData</state>
+        <q>Да</q>
+        <a>Здорово общаться со старыми друзьями!</a>
+        <a>Давайте выберем погоду и подберем тур</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+
+    </test-case>
+    
+    <test-case id="проверка путей ConfirmData">
+        <state>ConfirmData</state>
+        <q>Да</q>
+        <a state="/ConfirmData/Accepted"/>
+        <a state="/ConfirmData/Accepted"/>
+        <a state="/Weather/StartWeather1"/>
+    </test-case>
+
+    <test-case id="проверка Anketing запрос имени">
+        <state>Anketing</state>
+        <q>Алексей</q>
+        <a>Ваше имя: Алексей?</a>
+    </test-case>
+    
+    <test-case id="проверка Anketing ответ на запрос имени">
+        <state>Anketing/Confirm</state>
+        <q>Да</q>
+        <a>Это не имя</a>
+        <a>Повторите ваше имя ->:</a>
+    </test-case>
+
+
+    <test-case id="проверка Anketing ответ на запрос имени">
+        <state>Anketing/Confirm</state>
+        <q>Нет</q>
+        <a>Это не имя</a>
+        <a>Повторите ваше имя ->:</a>
+    </test-case>
+
+    <test-case id="проверка Anketing ответ на ошибку имени">
+        <state>Anketing/MyWrong</state>
+        <q>*</q>
+        <a>Это не имя</a>
+        <a>Повторите ваше имя ->:</a>
+    </test-case>
+
+    <test-case id="проверка Phone">
+        <state>Phone/Ask</state>
+        <q>0</q>
+        <a>Укажите правильный номер телефона - >:</a>
+        <a>Введите номер телефона по которому с Вами можно свзяться ->:</a>
+    </test-case>
+
+    <test-case id="проверка Phone Ответ нет">
+        <state>Phone/Ask</state>
+        <q>нет</q>
+        <a>Привет, привет!</a>
+        <a>Я бот туристической компании "Just Tour"</a>
+        <a state="/Service/SuggestHelp"/>
+    </test-case>
+
+    <test-case id="проверка Phone Ответ да">
+        <state>Phone/Confirm</state>
+        <q>Да</q>
+        <a>Хорошо. Давайте все проверим.</a>
+        <a>Вас зовут , ваш телефон .</a>
+    </test-case>
+
+    <test-case id="проверка Анкетных данных Ответ да">
+        <state>Phone/Confirm/Yes/Yes</state>
+        <q>Да</q>
+        <a>Давайте подберем тур</a>
+        <a>Я могу сообщить вам текущую погоду в любом городе. Укажите город</a>
+    </test-case>
+
+    <test-case id="проверка путей Анкетных данных Ответ да">
+        <state>Phone/Confirm/Yes/Yes</state>
+        <q>Да</q>
+        <a state="/Phone/Confirm/Yes/Yes"/>
+        <a state="/Weather/StartWeather1"/>
+    </test-case>
+
+    <test-case id="проверка Анкетных данных Ответ нет">
+        <state>Phone/Confirm/Yes/Yes</state>
+        <q>нет</q>
+        <a>Повторим регистрацию</a>
+        <a>Как Вас зовут?</a>
+    </test-case>
+
+    <test-case id="проверка путей Анкетных данных Ответ нет">
+        <state>Phone/Confirm/Yes/Yes</state>
+        <q>нет</q>
+        <a state="/Phone/Confirm/Yes/No"/>
+        <a state="/Phone/Confirm/Yes/No"/>
+    </test-case>
+    
+    
+        <test-case id="проверка путей Анкетных данных Ответ нет">
+        <state>Phone/Confirm/Yes/Yes</state>
+        <q>нет</q>
+        <a state="/Phone/Confirm/Yes/No"/>
+        <a state="/Phone/Confirm/Yes/No"/>
+    </test-case>
+
+
+
+
+
+</test>  
