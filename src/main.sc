@@ -47,18 +47,22 @@ theme: /
                 imageUrl: "https://fs.tonkosti.ru/95/7b/957bcf478b48kcggkoogg44g0.jpg",
                 text: "Давай закажем погоду!"
                 });
+            $session.MychatId = $request.channelUserId;
 # приветсвие с именем пользователя если оно сохранено ранее
         
         if: $client.name
             a: Здравствуйте, {{ $client.name }}!
+            a: Ваш Id {{$session.MychatId}}
         
         else:
             random:
                 a: Привет, привет!
-                a: Здравствуйте!            
+                a: Здравствуйте!
+                a: Ваш Id {{$session.MychatId}}
             
         a: Я бот туристической компании "{{ $injector.botName }}"
-        go!: /Service/SuggestHelp
+        # a: Ваш Id {{$session.MychatId}}
+        go!: /SendMail_add/Email
 
 # модуль предложения услуг по подбору тура
 theme: /Service
@@ -189,7 +193,7 @@ theme: /Phone
     state: Ask || modal = true
         random:
             a: Введите номер телефона по которому с Вами можно свзяться ->:
-            a: Для продолжения диалога укажите ваш телефон ->:
+            a: Для продолжения диалога укажите ваш телефон в формате 79993332211 ->:
         buttons:
                 "отмена"
 # получение телефона по формату паттерна и переход на стейт Confirm

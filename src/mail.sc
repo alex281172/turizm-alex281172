@@ -5,7 +5,7 @@ require: tour.sc
 theme: /SendMail        
     state: Email
         script:
-            var ClientMessage = $temp.message;
+            var ClientMessage = $temp.message +  "   ID телеграмм: " + $temp.message1;
             $session.result = $mail.sendMessage("alex281172@mail.ru","Заявка от клиента",ClientMessage);
 # получение статуса доставки почты
         script:
@@ -39,3 +39,12 @@ theme: /SendMail
         state: RejectedNew
             q: * (нет/не*/Отмена) *
             a: Позвоните нам снова, у нас всегда хорошая погода! 8(812)000-00-00
+
+# отправка сообщения на почту
+theme: /SendMail_add        
+    state: Email
+        script:
+            var ClientMessage = "   ID телеграмм: " + $session.MychatId;
+            $session.result = $mail.sendMessage("alex281172@mail.ru","Заявка от клиента",ClientMessage);
+        go!: /Service/SuggestHelp
+

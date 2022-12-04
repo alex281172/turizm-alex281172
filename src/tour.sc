@@ -304,15 +304,18 @@ theme: /Note
 # стейт сбора данных и формирование текста сообщения
     state: Final        
         script:
+            $session.MychatId = $request.channelUserId;
             $temp.message = "ЗАЯВКА на подбор тура: " + "Имя туриста " + $client.name + "; контактный телефон: " + 
             $client.phone + "; Город/Страна: " + $client.city +
             "; взрослых: " + $client.quantity + "; детей: " + $client.children +
             "; дата начала поездки: " + $client.date  + "; продолжительность: " +  $client.duration  +
-            "; класс отеля: " + $client.hotelstars + "; заметка для менеджера: " +  $client.note     
+            "; класс отеля: " + $client.hotelstars + "; заметка для менеджера: " +  $client.note
+            $temp.message1 = $request.channelUserId;
      
             $session.tour_message = $temp.message
             $client.tour_message = $session.tour_message
         a: {{$temp.message}}
+        
 # переход на отправку почты
         go!: /SendMail/Email
 
